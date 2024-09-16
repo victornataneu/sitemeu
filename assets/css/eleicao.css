@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sections-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "nav"
+        "main";
+    min-height: 100vh;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: rgb(70, 188, 209);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    height: 6rem; /* Fixar a altura da navbar */
+}
+
+
+
+
+
+
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 11rem;
+}
+
+.nav ul li {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.8rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@media(max-width: 1150px){
+    
+    .nav ul {
+        display: flex;
+        gap: 8rem;
+    }
+
+    .nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.2rem;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+}
+
+
+@media(max-width: 900px){
+    
+    .nav ul {
+        display: flex;
+        gap: 5rem;
+    }
+
+    .nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.2rem;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+}
+
+
+@media(max-width: 760px){
+    
+    .nav ul {
+        display: flex;
+        gap: 1.8rem;
+    }
+
+    .nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.2rem;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+}
+
+@media(max-width: 600px){
+    
+    .nav ul {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 0.9rem;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+}
+
+
+@media(max-width: 450px){
+    
+    .nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 0.9rem;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .nav {
+        grid-area: nav;
+        background-color: rgb(70, 188, 209);
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        height: 14rem; /* Fixar a altura da navbar */
+        
+    }
+
+    .section-main{
+        margin-top: 6.2rem;
+    }
+
+    .nav {
+        display: none; /* Esta regra sobrescreve a anterior, escondendo o menu (nav) por padrão */
+        
+    }
+
+    .close-menu {
+        position: fixed; /* Fixa o elemento na tela, mantendo sua posição ao rolar a página */
+        z-index: 2; /* Garante que este elemento fique acima de outros */
+        top: 0; /* Posiciona o elemento no topo da página */
+        left: 0; /* Alinha o elemento à esquerda da tela */
+        
+    }
+
+    .close-menu-label::after {
+        content: '☰'; /* Exibe o ícone de "hambúrguer" (três linhas) como conteúdo adicional */
+        position: fixed; /* Fixa o ícone de menu na tela */
+        z-index: 2; /* Garante que o ícone fique acima de outros elementos */
+        top: 2rem; /* Posiciona o ícone no topo da tela */
+        right: 1rem; /* Afasta o ícone da borda direita em 2rem */
+        background-color: black; /* Define o fundo do ícone como preto */
+        color: white; /* Define a cor do ícone como branco */
+        font-size: 3rem; /* Define o tamanho da fonte (ícone) como 3rem */
+        padding: 1rem; /* Adiciona um preenchimento interno ao redor do ícone */
+        line-height: 3rem; /* Define a altura da linha para alinhar verticalmente o ícone */
+        width: 3rem; /* Define a largura do ícone */
+        height: 3rem; /* Define a altura do ícone */
+        text-align: center; /* Centraliza o conteúdo (ícone) horizontalmente */
+        cursor: pointer; /* Muda o cursor para um ponteiro ao passar sobre o ícone */
+    }
+
+
+    .close-menu:checked ~ .sections-grid .nav {
+        display: block; /* Exibe o menu (nav) quando o checkbox close-menu estiver marcado */
+        
+
+    }
+
+
+    .close-menu:checked ~ .close-menu-label::after {
+        display: block; /* Garante que o ícone de fechar seja exibido quando o menu estiver aberto */
+        content: '×'; /* Troca o ícone de "hambúrguer" por um ícone de "fechar" (X) */
+        
+    }
+
+    
+}
+
+
+
+
+@media(max-width: 360px){
+    
+    .nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 0.9rem;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .nav {
+        grid-area: nav;
+        background-color: rgb(70, 188, 209);
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        height: 14rem; /* Fixar a altura da navbar */
+        
+    }
+
+    .section-main{
+        margin-top: 6.2rem;
+    }
+
+
+
+
+    .nav {
+        display: none; /* Esta regra sobrescreve a anterior, escondendo o menu (nav) por padrão */
+        
+    }
+
+    .close-menu {
+        position: fixed; /* Fixa o elemento na tela, mantendo sua posição ao rolar a página */
+        z-index: 2; /* Garante que este elemento fique acima de outros */
+        top: 0; /* Posiciona o elemento no topo da página */
+        left: 0; /* Alinha o elemento à esquerda da tela */
+        
+    }
+
+    .close-menu-label::after {
+        content: '☰'; /* Exibe o ícone de "hambúrguer" (três linhas) como conteúdo adicional */
+        position: fixed; /* Fixa o ícone de menu na tela */
+        z-index: 2; /* Garante que o ícone fique acima de outros elementos */
+        top: 2rem; /* Posiciona o ícone no topo da tela */
+        right: 1rem; /* Afasta o ícone da borda direita em 2rem */
+        background-color: black; /* Define o fundo do ícone como preto */
+        color: white; /* Define a cor do ícone como branco */
+        font-size: 3rem; /* Define o tamanho da fonte (ícone) como 3rem */
+        padding: 1rem; /* Adiciona um preenchimento interno ao redor do ícone */
+        line-height: 3rem; /* Define a altura da linha para alinhar verticalmente o ícone */
+        width: 3rem; /* Define a largura do ícone */
+        height: 3rem; /* Define a altura do ícone */
+        text-align: center; /* Centraliza o conteúdo (ícone) horizontalmente */
+        cursor: pointer; /* Muda o cursor para um ponteiro ao passar sobre o ícone */
+    }
+
+
+    .close-menu:checked ~ .sections-grid .nav {
+        display: block; /* Exibe o menu (nav) quando o checkbox close-menu estiver marcado */
+        
+
+    }
+
+
+    .close-menu:checked ~ .close-menu-label::after {
+        display: block; /* Garante que o ícone de fechar seja exibido quando o menu estiver aberto */
+        content: '×'; /* Troca o ícone de "hambúrguer" por um ícone de "fechar" (X) */
+        
+    }
+
+    
+}
+
+
+
+
+
+.close-menu {
+    display: none; /* Esconde o checkbox de controle (close-menu) */
+}
+
+
+
+
+.section-main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 6rem; /* Espaçamento para evitar sobreposição com a navbar */
+    padding: 2rem;
+}
+
+.section-main h1 {
+    background-color: rgb(70, 188, 209);
+    margin-top: 2rem;
+    font-size: 2rem;
+    width: 100%;
+    border-radius: 2rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-ela {
+    display: flex;
+    width: 100%;
+    max-width: 60rem;
+    justify-content: center;
+    margin-top: 6rem;
+}
+
+.img-ela img {
+    width: 100%;
+    max-height: 40rem;
+    object-fit: cover; /* Mantém a proporção da imagem */
+}
+
+.img-ela .img-2 {
+    width: 100%; /* Diminui a largura da imagem para 50% */
+    max-height: 80rem; /* Limita a altura máxima da imagem */
+    height: auto; /* Mantém a altura proporcional à largura */
+    object-fit: contain; /* Garante que a imagem seja exibida inteira sem cortes */
+    margin-left: 1rem;
+}
+
+
+.content-quem-sou {
+    margin-top: 1rem;
+    text-align: justify;
+    font-size: 1.4rem;
+}
+
+.img-profissional {
+    display: flex;
+    width: 100%;
+    max-width: 100rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.img-profissional img {
+    width: 100%;
+    max-height: 40rem;
+    object-fit: cover; /* Mantém a proporção da imagem */
+}
+
+.img-vida-profissional {
+    display: flex;
+    background-size: cover;
+    margin-bottom: 2rem;
+}
+
+.content-profissional {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    text-align: justify;
+}
